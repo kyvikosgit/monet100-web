@@ -21,9 +21,15 @@ body{background:var(--deep);color:var(--cream);font-family:Pretendard,-apple-sys
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-/* ── nav */
-header{position:fixed;inset:0 0 auto;z-index:10;mix-blend-mode:difference}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 4vw}
+/* ── nav — 스크롤하면 불투명 배경 + 헤어라인 */
+header{position:fixed;inset:0 0 auto;z-index:10;
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background .35s,border-color .35s}
+header.scrolled{background:rgba(18,27,26,.92);border-color:var(--hair);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 4vw;
+  transition:padding .35s}
+header.scrolled .nav{padding:15px 4vw}
 .wordmark img{height:34px;width:auto;display:block}
 nav a{font-size:12px;letter-spacing:.22em;margin-left:34px;position:relative;padding-bottom:3px}
 nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .3s}
@@ -256,5 +262,12 @@ footer .legal a:hover{color:var(--cream)}
     </div>
   </div>
 </footer>
+
+<script>
+const hd = document.querySelector('header');
+const onScroll = () => hd.classList.toggle('scrolled', window.scrollY > 40);
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
 </body>
 </html>
