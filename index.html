@@ -15,8 +15,9 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--deep);color:var(--cream);font-family:Pretendard,-apple-system,sans-serif;
+body{background:#FFFFFF;color:var(--cream);font-family:Pretendard,-apple-system,sans-serif;
   font-weight:300;line-height:1.85;-webkit-font-smoothing:antialiased}
+.page{max-width:1080px;margin:0 auto;background:var(--deep);min-height:100svh}
 ::selection{background:var(--rust);color:var(--cream)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -26,41 +27,46 @@ body{padding-top:60px}
 .svcbar{position:fixed;top:0;left:0;right:0;z-index:30;height:60px;
   background:#FFFFFF;color:#111111;border-bottom:1px solid #ECECEA;
   font-family:Pretendard,-apple-system,sans-serif;font-weight:400;line-height:1}
-.svcbar .in{height:60px;display:flex;align-items:center;padding:0 4vw;white-space:nowrap}
+.svcbar .in{height:60px;display:flex;align-items:center;white-space:nowrap;
+  max-width:1080px;margin:0 auto;padding:0 24px}
 .svcbar .brand{flex:none;font-size:21px;font-weight:900;letter-spacing:.05em;color:#111111}
-.svcbar .live{flex:none;display:inline-flex;align-items:center;gap:7px;margin-left:22px;
-  padding:7px 13px;border-radius:999px;background:#F6F6F4;
-  font-size:12.5px;font-weight:600;color:#454541}
-.svcbar .live b{color:#111111;font-weight:700}
-.svcbar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#CC4725}
-.svcbar nav{margin-left:auto;display:flex;align-items:center;gap:26px;flex:none}
-.svcbar nav a{font-size:14px;font-weight:600;color:#454541;padding:0;margin:0;letter-spacing:0}
+.svcbar .sw{flex:none;display:inline-flex;align-items:center;gap:8px;margin-left:22px;
+  padding:9px 15px;border:1px solid #E4E4E0;border-radius:999px;
+  font-size:13.5px;font-weight:700;color:#111111;transition:background .2s}
+.svcbar .sw:hover{background:#F6F6F4}
+.svcbar .sw::before{content:"";width:6px;height:6px;border-radius:50%;background:#CC4725}
+.svcbar .sw small{font-size:11.5px;font-weight:500;color:#9C9C96}
+.svcbar .sw i{width:7px;height:7px;border-right:1.5px solid #9C9C96;border-bottom:1.5px solid #9C9C96;
+  transform:rotate(45deg) translate(-1px,-1px)}
+.svcbar nav{margin-left:auto;display:flex;align-items:center;gap:28px;flex:none}
+.svcbar nav a{font-size:14px;font-weight:600;color:#77776F;padding:0;margin:0;letter-spacing:0}
 .svcbar nav a:hover{color:#111111}
+.svcbar nav a.on{color:#111111;font-weight:800}
 .svcbar nav a.app{background:#111111;color:#FFFFFF;border-radius:999px;padding:10px 18px;
   font-size:13.5px;font-weight:700}
 .svcbar nav a::after{display:none}
 
 /* ── nav — 스크롤하면 불투명 배경 + 헤어라인 */
-header{position:fixed;top:60px;left:0;right:0;z-index:10;
+header{position:fixed;top:60px;left:50%;transform:translateX(-50%);width:100%;max-width:1080px;z-index:10;
   background:transparent;border-bottom:1px solid transparent;
   transition:background .35s,border-color .35s}
 header.scrolled{background:rgba(18,27,26,.92);border-color:var(--hair);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 4vw;
+.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 28px;
   transition:padding .35s}
-header.scrolled .nav{padding:15px 4vw}
+header.scrolled .nav{padding:15px 28px}
 .wordmark img{height:34px;width:auto;display:block}
 nav a{font-size:12px;letter-spacing:.22em;margin-left:34px;position:relative;padding-bottom:3px}
 nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .3s}
 nav a:hover::after{width:100%}
 
 /* ── hero — 왼쪽 카피 컬럼 + 오른쪽 키비주얼(포스터 비율 유지) 스플릿 */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(340px,42vw,720px);min-height:100svh}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,44%,480px);min-height:calc(100svh - 60px)}
 .hero-vis{position:relative;overflow:hidden}
 .hero-vis .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%}
 .hero-vis::after{content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,rgba(18,27,26,.28) 0%,rgba(18,27,26,0) 30%)}
-.hero-in{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 4vw 7vh}
+.hero-in{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 28px 7vh}
 .overline{font-size:11px;letter-spacing:.5em;color:var(--cream);opacity:.75;text-transform:uppercase}
 .herocopy{font-family:"Noto Serif KR",serif;font-weight:300;font-size:clamp(16px,1.9vw,22px);
   line-height:1.9;letter-spacing:.14em;margin:8vh 0 5vh}
@@ -85,7 +91,7 @@ nav a:hover::after{width:100%}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ── sections */
-section{padding:clamp(90px,14vh,160px) 4vw}
+section{padding:clamp(90px,14vh,160px) clamp(16px,4vw,28px)}
 .sec-head{display:flex;align-items:baseline;gap:26px;margin-bottom:clamp(44px,7vh,80px);
   max-width:1280px;margin-left:auto;margin-right:auto}
 .sec-no{font-family:"Fraunces",serif;font-style:italic;font-weight:300;font-size:15px;color:var(--rust);letter-spacing:.1em}
@@ -131,7 +137,7 @@ section{padding:clamp(90px,14vh,160px) 4vw}
 .tix .note a:hover{color:var(--rust);border-color:var(--rust)}
 
 /* footer — KIPPU 플랫폼 푸터 */
-footer{border-top:1px solid var(--hair);background:#0c1312;padding:0 4vw;
+footer{border-top:1px solid var(--hair);background:#0c1312;padding:0 clamp(16px,4vw,28px);
   font-family:Pretendard,-apple-system,sans-serif;font-size:11.5px;color:var(--dim);line-height:2.1}
 footer .fin{max-width:1280px;margin:0 auto}
 footer .ftop{display:flex;flex-wrap:wrap;align-items:flex-start;gap:18px 60px;
@@ -160,11 +166,10 @@ footer .legal a:hover{color:var(--cream)}
   nav a{margin-left:18px;letter-spacing:.14em}
   body{padding-top:54px}
   .svcbar{height:54px}
-  .svcbar .in{height:54px}
+  .svcbar .in{height:54px;padding:0 16px}
   .svcbar .brand{font-size:18px}
-  .svcbar .live{display:none}
-  .svcbar nav{gap:18px}
-  .svcbar nav a{font-size:13px}
+  .svcbar .sw{margin-left:12px;padding:7px 11px;font-size:12px;gap:6px}
+  .svcbar nav a:not(.app){display:none}
   .svcbar nav a.app{padding:9px 15px;font-size:12.5px}
   header{top:54px}
 }
@@ -174,12 +179,15 @@ footer .legal a:hover{color:var(--cream)}
 
 <div class="svcbar"><div class="in">
   <a class="brand" href="/">KIPPU</a>
-  <span class="live"><b>MONET 100</b> 지금 전시 중</span>
+  <a class="sw" href="/#now"><b>MONET 100</b><i></i></a>
   <nav>
-    <a href="/#now">다른 전시</a>
+    <a class="on" href="/#now">전시</a>
+    <a href="/#how">이용 방법</a>
     <a class="app" href="/#app">앱 다운로드</a>
   </nav>
 </div></div>
+
+<div class="page">
 
 <header>
   <div class="nav">
@@ -320,6 +328,7 @@ footer .legal a:hover{color:var(--cream)}
     </div>
   </div>
 </footer>
+</div><!-- /.page -->
 
 <script>
 const hd = document.querySelector('header');
