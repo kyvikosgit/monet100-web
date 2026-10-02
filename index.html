@@ -52,9 +52,9 @@ header{position:fixed;top:60px;left:50%;transform:translateX(-50%);width:100%;ma
   transition:background .35s,border-color .35s}
 header.scrolled{background:rgba(18,27,26,.92);border-color:var(--hair);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 28px;
+.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 24px;
   transition:padding .35s}
-header.scrolled .nav{padding:15px 28px}
+header.scrolled .nav{padding:15px 24px}
 .wordmark img{height:34px;width:auto;display:block}
 nav a{font-size:12px;letter-spacing:.22em;margin-left:34px;position:relative;padding-bottom:3px}
 nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .3s}
@@ -66,7 +66,7 @@ nav a:hover::after{width:100%}
 .hero-vis .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%}
 .hero-vis::after{content:"";position:absolute;inset:0;
   background:linear-gradient(90deg,rgba(18,27,26,.28) 0%,rgba(18,27,26,0) 30%)}
-.hero-in{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 28px 7vh}
+.hero-in{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 24px 7vh}
 .overline{font-size:11px;letter-spacing:.5em;color:var(--cream);opacity:.75;text-transform:uppercase}
 .herocopy{font-family:"Noto Serif KR",serif;font-weight:300;font-size:clamp(16px,1.9vw,22px);
   line-height:1.9;letter-spacing:.14em;margin:8vh 0 5vh}
@@ -91,7 +91,7 @@ nav a:hover::after{width:100%}
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ── sections */
-section{padding:clamp(90px,14vh,160px) clamp(16px,4vw,28px)}
+section{padding:clamp(90px,14vh,160px) clamp(16px,4vw,24px)}
 .sec-head{display:flex;align-items:baseline;gap:26px;margin-bottom:clamp(44px,7vh,80px);
   max-width:1280px;margin-left:auto;margin-right:auto}
 .sec-no{font-family:"Fraunces",serif;font-style:italic;font-weight:300;font-size:15px;color:var(--rust);letter-spacing:.1em}
@@ -137,7 +137,7 @@ section{padding:clamp(90px,14vh,160px) clamp(16px,4vw,28px)}
 .tix .note a:hover{color:var(--rust);border-color:var(--rust)}
 
 /* footer — KIPPU 플랫폼 푸터 */
-footer{border-top:1px solid var(--hair);background:#0c1312;padding:0 clamp(16px,4vw,28px);
+footer{border-top:1px solid var(--hair);background:#0c1312;padding:0 clamp(16px,4vw,24px);
   font-family:Pretendard,-apple-system,sans-serif;font-size:11.5px;color:var(--dim);line-height:2.1}
 footer .fin{max-width:1280px;margin:0 auto}
 footer .ftop{display:flex;flex-wrap:wrap;align-items:flex-start;gap:18px 60px;
