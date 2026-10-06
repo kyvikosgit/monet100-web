@@ -22,16 +22,16 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
 /* ── KIPPU 서비스 바 — 플랫폼 공통 상단 */
-body{padding-top:60px}
-.svcbar{position:fixed;top:0;left:0;right:0;z-index:30;height:60px;
+body{padding-top:64px}
+.svcbar{position:fixed;top:0;left:0;right:0;z-index:30;height:64px;
   background:#FFFFFF;color:#111111;border-bottom:1px solid #ECECEA;
   font-family:Pretendard,-apple-system,sans-serif;font-weight:400;line-height:1}
-.svcbar .in{height:60px;display:flex;align-items:center;white-space:nowrap;padding:0 4vw}
-.svcbar .brand{flex:none;font-size:21px;font-weight:900;letter-spacing:.05em;color:#111111}
+.svcbar .in{height:64px;display:flex;align-items:center;white-space:nowrap;padding:0 4vw}
+.svcbar .brand{flex:none;font-size:24px;font-weight:900;letter-spacing:.02em;color:#CC4725}
 .svcbar .sw{flex:none;display:inline-flex;align-items:center;gap:8px;margin-left:22px;
-  padding:9px 15px;border:1px solid #E4E4E0;border-radius:999px;
+  padding:9px 15px;border:1px solid #ECE9E2;border-radius:999px;
   font-size:13.5px;font-weight:700;color:#111111;transition:background .2s}
-.svcbar .sw:hover{background:#F6F6F4}
+.svcbar .sw:hover{background:#F5F3EE}
 .svcbar .sw::before{content:"";width:6px;height:6px;border-radius:50%;background:#CC4725}
 .svcbar .sw small{font-size:11.5px;font-weight:500;color:#9C9C96}
 .svcbar .sw i{width:7px;height:7px;border-right:1.5px solid #9C9C96;border-bottom:1.5px solid #9C9C96;
@@ -40,12 +40,13 @@ body{padding-top:60px}
 .svcbar nav a{font-size:14px;font-weight:600;color:#77776F;padding:0;margin:0;letter-spacing:0}
 .svcbar nav a:hover{color:#111111}
 .svcbar nav a.on{color:#111111;font-weight:800}
-.svcbar nav a.app{background:#111111;color:#FFFFFF;border-radius:999px;padding:10px 18px;
+.svcbar nav a.app{background:#CC4725;color:#FFFFFF;border-radius:10px;padding:10px 18px;
   font-size:13.5px;font-weight:700}
+.svcbar nav a.app:hover{background:#B23A1C;color:#FFFFFF}
 .svcbar nav a::after{display:none}
 
 /* ── nav — 스크롤하면 불투명 배경 + 헤어라인 */
-header{position:fixed;top:60px;left:0;right:0;z-index:10;
+header{position:fixed;top:64px;left:0;right:0;z-index:10;
   background:transparent;border-bottom:1px solid transparent;
   transition:background .35s,border-color .35s}
 header.scrolled{background:rgba(18,27,26,.92);border-color:var(--hair);
@@ -74,9 +75,9 @@ nav a:hover::after{width:100%}
   border-top:1px solid var(--hair);padding-top:26px}
 .hero-foot .dates{font-family:"Fraunces",serif;font-size:clamp(17px,2.2vw,24px);letter-spacing:.04em}
 .hero-foot .venue{font-size:12px;letter-spacing:.3em;color:var(--dim)}
-.hero-foot .cta{margin-left:auto;font-size:12.5px;letter-spacing:.24em;border-bottom:1px solid var(--cream);
-  padding-bottom:4px;transition:color .3s,border-color .3s}
-.hero-foot .cta:hover{color:var(--rust);border-color:var(--rust)}
+.hero-foot .cta{margin-left:auto;display:inline-flex;align-items:center;background:var(--rust);color:#F7EFE2;
+  font-size:12.5px;font-weight:700;letter-spacing:.2em;padding:13px 24px;border-radius:8px;transition:opacity .2s}
+.hero-foot .cta:hover{opacity:.9}
 .credit{position:absolute;z-index:2;right:18px;top:50%;transform:rotate(90deg) translateX(50%);transform-origin:right center;
   font-size:10px;letter-spacing:.28em;color:rgba(236,227,210,.55);white-space:nowrap}
 
@@ -134,22 +135,23 @@ section{padding:clamp(90px,14vh,160px) 4vw}
 .tix .note a{border-bottom:1px solid var(--dim);padding-bottom:2px}
 .tix .note a:hover{color:var(--rust);border-color:var(--rust)}
 
-/* footer — KIPPU 플랫폼 푸터 */
-footer{border-top:1px solid var(--hair);background:#0c1312;padding:0 4vw;
-  font-family:Pretendard,-apple-system,sans-serif;font-size:11.5px;color:var(--dim);line-height:2.1}
+/* footer — KIPPU 플랫폼 푸터 (라이트, 홈과 동일 톤) */
+footer{background:#FFFFFF;color:#9C9C96;padding:0 4vw;
+  font-family:Pretendard,-apple-system,sans-serif;font-size:12px;line-height:2}
 footer .fin{max-width:1280px;margin:0 auto}
 footer .ftop{display:flex;flex-wrap:wrap;align-items:flex-start;gap:18px 60px;
-  padding:44px 0 34px;border-bottom:1px solid var(--hair)}
-footer .fplat{display:block;font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--cream);line-height:1.4}
-footer .fplat small{display:block;font-size:9px;font-weight:500;letter-spacing:.18em;color:var(--dim)}
-footer .fnote{margin-top:12px;font-size:12px}
-footer .fnote b{color:var(--cream);font-weight:600}
-footer .flinks{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 26px;font-size:12px}
-footer .flinks a{color:var(--cream);opacity:.85;font-weight:500}
-footer .flinks a:hover{opacity:1}
-footer .fbot{display:flex;flex-wrap:wrap;gap:14px 60px;justify-content:space-between;padding:28px 0 46px}
+  padding:40px 0 30px;border-bottom:1px solid #ECE9E2}
+footer .fplat{display:block;font-size:19px;font-weight:900;letter-spacing:.02em;color:#CC4725;line-height:1.4}
+footer .fplat small{display:none}
+footer .fnote{margin-top:8px;font-size:12.5px;color:#77776F}
+footer .fnote b{color:#111111;font-weight:700}
+footer .flinks{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 24px;font-size:12.5px}
+footer .flinks a{color:#454541;font-weight:600}
+footer .flinks a:hover{color:#111111}
+footer .fbot{display:flex;flex-wrap:wrap;gap:14px 60px;justify-content:space-between;padding:24px 0 44px}
 footer .legal{display:flex;flex-wrap:wrap;gap:0 20px;align-self:flex-start}
-footer .legal a:hover{color:var(--cream)}
+footer .legal a{color:#77776F;font-weight:500}
+footer .legal a:hover{color:#111111}
 
 @media (max-width:820px){
   /* 모바일 — 세로 뷰포트는 포스터 비율과 맞으므로 풀블리드 오버레이로 복귀 */
@@ -162,14 +164,14 @@ footer .legal a:hover{color:var(--cream)}
   .figure{order:-1;max-width:420px}
   .credit{display:none}
   nav a{margin-left:18px;letter-spacing:.14em}
-  body{padding-top:54px}
-  .svcbar{height:54px}
-  .svcbar .in{height:54px;padding:0 16px}
-  .svcbar .brand{font-size:18px}
+  body{padding-top:56px}
+  .svcbar{height:56px}
+  .svcbar .in{height:56px;padding:0 16px}
+  .svcbar .brand{font-size:20px}
   .svcbar .sw{margin-left:12px;padding:7px 11px;font-size:12px;gap:6px}
   .svcbar nav a:not(.app){display:none}
   .svcbar nav a.app{padding:9px 15px;font-size:12.5px}
-  header{top:54px}
+  header{top:56px}
 }
 </style>
 </head>
